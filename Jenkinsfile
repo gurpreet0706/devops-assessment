@@ -9,9 +9,9 @@ pipeline {
             steps { 
                  sh '''
                   ls -lstr
-                 "chmod -R 777 ./build.sh"
-                 "./build.sh"
-                   echo 'This is a minimal pipeline for testing of token.' 
+                 chmod -R 777 ./build.sh
+                 ./build.sh
+                 echo 'This is a minimal pipeline for testing of token.' 
                  '''
             }
         }
