@@ -3,7 +3,9 @@ pipeline {
     stages { 
         stage('Build') { 
             steps { 
-               echo 'This is a minimal pipeline for testing of token.' 
+                ls
+
+                echo 'This is a minimal pipeline for testing of token.' 
             }
         }
     }
