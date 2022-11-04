@@ -8,6 +8,8 @@ pipeline {
         stage('Build') { 
             steps { 
                  sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
                   ls -lstr
                  chmod -R 777 ./build.sh
                  ./build.sh
