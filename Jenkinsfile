@@ -3,7 +3,8 @@ pipeline {
     stages { 
         stage('Build') { 
             steps { 
-                echo 'This is a minimal pipeline for testing of token.' 
+                sh "pwd"
+                   echo 'This is a minimal pipeline for testing of token.' 
             }
         }
     }
