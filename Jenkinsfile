@@ -8,7 +8,7 @@ pipeline {
         stage('Build') { 
             steps { 
                  sh '''
-                  "ls -lstr"
+                  ls -lstr
                  "chmod -R 777 ./build.sh"
                  "./build.sh"
                    echo 'This is a minimal pipeline for testing of token.' 
