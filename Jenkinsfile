@@ -6,20 +6,30 @@ pipeline {
         nodejs "node"    
     }
     stages { 
-        stage('Intial') { 
+        stage('Building') { 
             steps { 
                  sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                    echo $JAVA_HOME
-                  ls -lstr
-                 mvn -version       
                  chmod -R 777 ./build.sh
                  ./build.sh
-                 echo 'This is a minimal pipeline for testing of token.' 
                  '''
             }
         }
-    }
+         stage('Testing') {
+          steps {
+                 sh '''
+                 chmod -R 777 ./test.sh
+                 ./test.sh
+                 '''
+            }
+        }
+        stage('Artifacts') {
+          steps {
+                 sh '''
+                 chmod -R 777 ./artifacts.sh
+                 ./artifacts.sh
+                 '''
+            }
+
+ }
 }
 
