@@ -10,6 +10,7 @@ pipeline {
                  sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
+                    echo $JAVA_HOME
                   ls -lstr
                  mvn -version       
                  chmod -R 777 ./build.sh
